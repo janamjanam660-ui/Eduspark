@@ -1,0 +1,1286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduSpark | Class 10 SEE Learning</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f8fc;
+    color: #263445;
+}
+
+header {
+    background: #062b50;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #ffd166;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+.hero {
+    min-height: 390px;
+    padding: 80px 7%;
+    background: linear-gradient(120deg, #062b50, #0875b9);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #e1efff;
+    margin-bottom: 25px;
+}
+
+.main-button {
+    display: inline-block;
+    background: #ffd166;
+    color: #062b50;
+    padding: 13px 24px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-button:hover {
+    background: #ffbd35;
+}
+
+.section {
+    padding: 65px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    color: #062b50;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: #68788a;
+    line-height: 1.6;
+}
+
+.search-area {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.search-area input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #cbd8e5;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-area input:focus {
+    border-color: #0875b9;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.filter-button {
+    padding: 10px 18px;
+    border: 1px solid #cbd8e5;
+    background: white;
+    color: #062b50;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.filter-button.active,
+.filter-button:hover {
+    background: #062b50;
+    color: white;
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+}
+
+.subject-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #062b5010;
+    border: 1px solid #e3ebf3;
+    transition: 0.3s;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px #062b5020;
+}
+
+.subject-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.subject-card h3 {
+    color: #062b50;
+    margin-bottom: 10px;
+}
+
+.subject-card p {
+    color: #68788a;
+    line-height: 1.6;
+    font-size: 14px;
+    min-height: 45px;
+}
+
+.card-button {
+    display: inline-block;
+    margin-top: 18px;
+    background: #0875b9;
+    color: white;
+    text-decoration: none;
+    padding: 10px 17px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.card-button:hover {
+    background: #062b50;
+}
+
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 25px;
+    color: #68788a;
+}
+
+.video-section {
+    background: #eaf2fa;
+}
+
+.video-container {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #062b5010;
+}
+
+.video-container h3 {
+    color: #062b50;
+    margin-bottom: 15px;
+}
+
+.video-select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #cbd8e5;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 9px;
+    background: #101820;
+}
+
+.video-message {
+    display: none;
+    padding: 35px 15px;
+    text-align: center;
+    background: #f4f8fc;
+    border-radius: 9px;
+    line-height: 1.7;
+}
+
+.video-message h4 {
+    color: #062b50;
+    margin-bottom: 8px;
+}
+
+.video-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.video-links a {
+    display: inline-block;
+    padding: 11px 17px;
+    border-radius: 6px;
+    background: #0875b9;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.video-links a:hover {
+    background: #062b50;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.resource-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e3ebf3;
+}
+
+.resource-card h3 {
+    color: #062b50;
+    margin-bottom: 12px;
+}
+
+.resource-card a {
+    color: #0875b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.resource-card a:hover {
+    text-decoration: underline;
+}
+
+.notice {
+    max-width: 850px;
+    margin: 25px auto 0;
+    color: #68788a;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+    max-width: 750px;
+    margin: auto;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid #e3ebf3;
+    box-shadow: 0 5px 20px #062b5010;
+}
+
+.contact-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    color: #062b50;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: #68788a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact-card a {
+    display: inline-block;
+    padding: 12px 18px;
+    background: #0875b9;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+}
+
+.contact-card a:hover {
+    background: #062b50;
+}
+
+footer {
+    background: #062b50;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+    line-height: 1.8;
+}
+
+footer span {
+    color: #ffd166;
+}
+
+@media (max-width: 650px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 65px 7%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 45px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+}
+#lockScreen {
+    position: fixed;
+    inset: 0;
+    background: #003366;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    text-align: center;
+}
+
+#pinInput {
+    padding: 12px;
+    margin: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#lockScreen button {
+    padding: 10px 25px;
+    background: #FFD166;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#error {
+    color: #ff7777;
+}
+
+/* PIN screen */
+#lockScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    background: radial-gradient(circle at top right, #0b6ca8 0, transparent 38%), linear-gradient(135deg, #041a31, #063b68 60%, #075b8d);
+}
+.lock-card {
+    width: min(100%, 430px);
+    padding: 38px 32px;
+    text-align: center;
+    color: #23364a;
+    background: #fff;
+    border: 1px solid #dce8f3;
+    border-radius: 22px;
+    box-shadow: 0 24px 80px #00152d70;
+}
+.lock-logo {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 15px;
+    color: #062b50;
+    background: #ffd166;
+    border-radius: 18px;
+    font-size: 32px;
+    font-weight: 800;
+}
+.lock-tag {
+    margin-bottom: 12px;
+    color: #0875b9;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+.lock-card h1 { color: #062b50; font-size: 27px; margin-bottom: 9px; }
+.lock-card > p:not(.lock-tag):not(.lock-footer) { color: #68788a; line-height: 1.6; }
+#pinForm { margin-top: 25px; text-align: left; }
+#pinLabel { display: block; margin-bottom: 8px; color: #263445; font-size: 14px; font-weight: 700; }
+.pin-field { display: flex; gap: 8px; }
+#pinInput {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 15px;
+    border: 1px solid #cbd8e5;
+    border-radius: 9px;
+    outline: none;
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+#pinInput:focus { border-color: #0875b9; box-shadow: 0 0 0 3px #0875b920; }
+.show-pin {
+    padding: 0 13px;
+    border: 1px solid #cbd8e5;
+    border-radius: 9px;
+    color: #062b50;
+    background: #f4f8fc;
+    cursor: pointer;
+}
+.unlock-button {
+    width: 100%;
+    margin-top: 14px;
+    padding: 14px 18px;
+    color: #062b50;
+    background: #ffd166;
+    border: 0;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+}
+.unlock-button:hover { background: #ffbd35; transform: translateY(-1px); }
+.unlock-button span { float: right; font-size: 20px; line-height: 16px; }
+#error { min-height: 22px; margin-top: 10px; color: #c62828; font-size: 13px; text-align: center; }
+.lock-footer { margin-top: 18px; color: #8795a5; font-size: 12px; }
+.security-note { margin-top: 12px; color: #9a6b20; font-size: 11px; line-height: 1.5; }
+.language-button {
+    padding: 9px 13px;
+    color: #062b50;
+    background: #ffd166;
+    border: 0;
+    border-radius: 7px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.online-section { background: #f8fbff; }
+.online-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    max-width: 850px;
+    margin: auto;
+    padding: 28px;
+    background: white;
+    border: 1px solid #e3ebf3;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px #062b5010;
+}
+.online-icon { font-size: 48px; }
+.online-card h3 { color: #062b50; margin-bottom: 8px; }
+.online-card p { color: #68788a; line-height: 1.6; margin-bottom: 18px; }
+.zoom-button[aria-disabled="true"] { opacity: .55; cursor: not-allowed; pointer-events: none; }
+.lock-again {
+    margin-top: 10px;
+    padding: 8px 14px;
+    color: white;
+    background: transparent;
+    border: 1px solid #ffffff80;
+    border-radius: 6px;
+    cursor: pointer;
+}
+nav a { padding: 7px 0; }
+button, a, input, select { -webkit-tap-highlight-color: transparent; }
+.subject-card, .resource-card, .contact-card { min-width: 0; }
+@media (max-width: 650px) {
+    header { padding: 16px 5%; gap: 12px; }
+    .logo { width: 100%; font-size: 25px; }
+    nav { width: 100%; gap: 8px 14px; }
+    nav a { font-size: 13px; }
+    .language-button { width: 100%; }
+    .lock-card { padding: 30px 22px; border-radius: 18px; }
+    .lock-card h1 { font-size: 23px; }
+    .online-card { align-items: flex-start; padding: 22px 18px; }
+    .online-icon { font-size: 36px; }
+    .video-container { padding: 14px; }
+    .filters { gap: 8px; }
+    .filter-button { padding: 10px 13px; }
+    .subject-grid, .resource-grid, .contact-container { grid-template-columns: 1fr; }
+    .subject-card, .resource-card, .contact-card { padding: 22px; }
+    .video-links a { flex: 1 1 100%; text-align: center; }
+}
+@media (max-width: 380px) {
+    .pin-field { flex-direction: column; }
+    .show-pin { padding: 10px; }
+}
+
+</style>
+</head>
+
+<body>
+<div id="lockScreen">
+    <div class="lock-card">
+        <div class="lock-logo">E</div>
+        <p class="lock-tag">EDUSPARK • SEE LEARNING PORTAL</p>
+        <h1 id="lockTitle">Welcome to EduSpark</h1>
+        <p id="lockDescription">Enter your access PIN to continue</p>
+        <form id="pinForm">
+            <label for="pinInput" id="pinLabel">Access PIN</label>
+            <div class="pin-field">
+                <input type="password" id="pinInput" placeholder="Enter 4-digit PIN"
+                       inputmode="numeric" autocomplete="off" maxlength="8"
+                       aria-describedby="error" required>
+                <button type="button" id="togglePin" class="show-pin" aria-label="Show PIN">Show</button>
+            </div>
+            <button type="submit" class="unlock-button" id="unlockButton">Unlock Website <span>→</span></button>
+            <p id="error" role="alert" aria-live="polite"></p>
+        </form>
+        <p class="lock-footer" id="lockFooter">A place to learn, practise and grow.</p>
+        <p class="security-note" id="securityNote">Note: This simple JavaScript PIN is not strong security.</p>
+    </div>
+</div>
+
+<header>
+    <div class="logo">EduSpark</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#videos">Videos</a>
+        <a href="#resources">Resources</a>
+        <a href="#online-classes">Online Class</a>
+        <a href="#contact-admin">Contact Admin</a>
+    </nav>
+    <button class="language-button" id="languageToggle" type="button">नेपाली</button>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1 id="heroTitle">Learn Better. Prepare Smarter.</h1>
+
+        <p>
+            Welcome to EduSpark, a learning platform for Class 10 SEE students.
+            Explore subject-wise notes, video lessons and useful study resources
+            in one place.
+        </p>
+
+        <a href="#subjects" class="main-button">Explore Subjects</a>
+    </div>
+</section>
+
+<section class="section" id="subjects">
+
+    <div class="section-heading">
+        <h2 id="subjectsTitle">Class 10 Subjects</h2>
+        <p id="subjectsDescription">Select a subject to explore its study materials.</p>
+    </div>
+
+    <div class="search-area">
+        <input type="text" id="searchInput"
+        placeholder="Search for a subject...">
+    </div>
+
+    <div class="filters">
+        <button class="filter-button active" data-filter="all">All</button>
+        <button class="filter-button" data-filter="compulsory">Compulsory</button>
+        <button class="filter-button" data-filter="optional">Optional</button>
+    </div>
+
+    <div class="subject-grid" id="subjectGrid">
+
+        <div class="subject-card" data-category="compulsory" data-name="science">
+            <div class="subject-icon">🔬</div>
+            <h3>Science</h3>
+            <p>Explore physics, chemistry, biology and technology.</p>
+            <a class="card-button" href="#videos" onclick="selectSubject('science')">Study Science</a>
+        </div>
+
+        <div class="subject-card" data-category="compulsory" data-name="mathematics">
+            <div class="subject-icon">📐</div>
+            <h3>Mathematics</h3>
+            <p>Practise algebra, geometry, statistics and other topics.</p>
+            <a class="card-button" href="#videos" onclick="selectSubject('mathematics')">Study Mathematics</a>
+        </div>
+
+        <div class="subject-card" data-category="compulsory" data-name="english">
+            <div class="subject-icon">📖</div>
+            <h3>English</h3>
+            <p>Improve grammar, reading, writing and communication.</p>
+            <a class="card-button" href="#videos" onclick="selectSubject('english')">Study English</a>
+        </div>
+
+        <div class="subject-card" data-category="compulsory" data-name="nepali">
+            <div class="subject-icon">📝</div>
+            <h3>Nepali</h3>
+            <p>Study Nepali literature, grammar and writing.</p>
+            <a class="card-button" href="#videos" onclick="selectSubject('nepali')">Study Nepali</a>
+        </div>
+
+        <div class="subject-card" data-category="compulsory" data-name="social studies">
+            <div class="subject-icon">🌍</div>
+            <h3>Social Studies</h3>
+            <p>Learn about society, history, geography and civics.</p>
+            <a class="card-button" href="#videos" onclick="selectSubject('social')">Study Social Studies</a>
+        </div>
+
+        <div class="subject-card" data-category="optional" data-name="optional mathematics">
+            <div class="subject-icon">📊</div>
+            <h3>Optional Mathematics</h3>
+            <p>Explore advanced algebra, geometry and trigonometry.</p>
+            <a class="card-button" href="#videos" onclick="selectSubject('optionalMath')">Study Optional Mathematics</a>
+        </div>
+
+    </div>
+
+    <div class="no-results" id="noResults">
+        No matching subject found.
+    </div>
+
+</section>
+
+<section class="section video-section" id="videos">
+
+    <div class="section-heading">
+        <h2 id="videosTitle">Video Lessons</h2>
+        <p id="videosDescription">Watch available Class 10 SEE video playlists.</p>
+    </div>
+
+    <div class="video-container">
+
+        <h3 id="videoTitle">Science Video Lessons</h3>
+
+        <select class="video-select" id="subjectSelect">
+            <option value="science">Science</option>
+            <option value="mathematics">Mathematics</option>
+            <option value="english">English</option>
+            <option value="nepali">Nepali</option>
+            <option value="social">Social Studies</option>
+            <option value="optionalMath">Optional Mathematics</option>
+        </select>
+
+        <iframe
+            class="video-frame"
+            id="videoPlayer"
+            title="Class 10 video lessons"
+            src="https://www.youtube.com/embed/videoseries?list=PLbYn2hpzIrShqF68mrYKtSyHzc7Z742cw"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+
+        <div class="video-message" id="videoMessage">
+            <h4>Video playlist not connected</h4>
+            <p>
+                A video playlist has not been configured for this subject yet.
+                You can still use the notes section.
+            </p>
+        </div>
+
+        <div class="video-links">
+            <a id="openPlaylist" href="#" target="_blank" rel="noopener noreferrer">
+                Open Original Playlist
+            </a>
+
+            <a id="openNotes" href="#" target="_blank" rel="noopener noreferrer">
+                Open Subject Notes
+            </a>
+        </div>
+
+        <p class="notice">
+            Videos are embedded from YouTube. Playback depends on the
+            video owner's embedding settings and YouTube availability.
+        </p>
+
+    </div>
+</section>
+
+<section class="section" id="resources">
+
+    <div class="section-heading">
+        <h2 id="resourcesTitle">Study Resources</h2>
+        <p id="resourcesDescription">Open chapter-wise notes and SEE study materials.</p>
+    </div>
+
+    <div class="resource-grid">
+
+        <div class="resource-card">
+            <h3>🔬 Science Notes</h3>
+            <a href="https://hamronotes.com/class-10/see/compulsory-science-and-technology/chapters" target="_blank" rel="noopener noreferrer">Open Chapter-wise Notes →</a>
+        </div>
+
+        <div class="resource-card">
+            <h3>📐 Mathematics Notes</h3>
+            <a href="https://hamronotes.com/class-10/see/compulsory-mathematics/chapters" target="_blank" rel="noopener noreferrer">Open Chapter-wise Notes →</a>
+        </div>
+
+        <div class="resource-card">
+            <h3>📖 English Notes</h3>
+            <a href="https://hamronotes.com/class-10" target="_blank" rel="noopener noreferrer">Open Class 10 Notes →</a>
+        </div>
+
+        <div class="resource-card">
+            <h3>📝 Nepali Notes</h3>
+            <a href="https://hamronotes.com/class-10" target="_blank" rel="noopener noreferrer">Open Class 10 Notes →</a>
+        </div>
+
+        <div class="resource-card">
+            <h3>🌍 Social Studies Notes</h3>
+            <a href="https://hamronotes.com/class-10/see/compulsory-social-studies/chapters" target="_blank" rel="noopener noreferrer">Open Chapter-wise Notes →</a>
+        </div>
+
+        <div class="resource-card">
+            <h3>📊 Optional Mathematics Notes</h3>
+            <a href="https://hamronotes.com/class-10/see/optional-mathematics/chapters" target="_blank" rel="noopener noreferrer">Open Chapter-wise Notes →</a>
+        </div>
+
+    </div>
+
+    <p class="notice">
+        Study materials are hosted by external providers.
+        Their availability and accuracy may change.
+    </p>
+
+</section>
+
+<section class="section video-section" id="videos">
+
+    <div class="section-heading">
+        <h2>Watch Online Classes</h2>
+        <p>Select a subject to watch its video lessons.</p>
+    </div>
+
+    <div class="video-container">
+
+        <select id="subjectVideo" onchange="changeVideo()">
+            <option value="science">Science</option>
+            <option value="math">Mathematics</option>
+            <option value="english">English</option>
+            <option value="nepali">Nepali</option>
+            <option value="social">Social Studies</option>
+        </select>
+
+        <div class="video-frame">
+            <iframe
+                id="videoPlayer"
+                src="https://www.youtube.com/embed/videoseries?list=PLbYn2hpzIrShqF68mrYKtSyHzc7Z742cw"
+                title="EduSpark Online Classes"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <p style="text-align:center; margin-top:15px;">
+            Video not playing?
+            <a id="youtubeLink"
+               href="https://www.youtube.com/playlist?list=PLbYn2hpzIrShqF68mrYKtSyHzc7Z742cw"
+               target="_blank"
+               rel="noopener">
+                Watch on YouTube
+            </a>
+        </p>
+
+    </div>
+
+</section>
+<section class="section" id="contact-admin">
+
+    <div class="section-heading">
+        <h2 id="contactTitle">Contact the Admin</h2>
+        <p>
+            Have questions about the SEE syllabus, notes or lessons?
+            Contact us directly.
+        </p>
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-card">
+            <div class="contact-icon">💬</div>
+            <h3>WhatsApp</h3>
+            <p>Send your questions directly through WhatsApp.</p>
+            <a id="whatsappLink" href="#" target="_blank" rel="noopener noreferrer">
+                Message on WhatsApp
+            </a>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-icon">📧</div>
+            <h3>Email</h3>
+            <p>Send syllabus questions and suggestions through email.</p>
+            <a id="emailLink" href="#">
+                Send an Email
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <h3>Edu<span>Spark</span></h3>
+    <p>Making learning simple and accessible.</p>
+    <p>© 2026 EduSpark. All rights reserved.</p>
+    <button id="lockAgain" class="lock-again">Lock Website</button>
+</footer>
+
+<script>
+
+// Admin contact details
+
+const adminPhone = "9779769466044";
+const adminEmail = "janamjanam660@gmail.com";
+
+document.getElementById("whatsappLink").href =
+    "https://wa.me/" + adminPhone +
+    "?text=" + encodeURIComponent("Hello EduSpark Admin, I have a question about the syllabus.");
+
+document.getElementById("emailLink").href =
+    "mailto:" + adminEmail +
+    "?subject=" + encodeURIComponent("EduSpark Student Question");
+
+// Subject resources
+
+const resources = {
+    science: {
+        title: "Science Video Lessons",
+        playlist: "PLbYn2hpzIrShqF68mrYKtSyHzc7Z742cw",
+        playlistPage: "https://www.youtube.com/playlist?list=PLbYn2hpzIrShqF68mrYKtSyHzc7Z742cw",
+        notes: "https://hamronotes.com/class-10/see/compulsory-science-and-technology/chapters"
+    },
+
+    mathematics: {
+        title: "Mathematics Video Lessons",
+        playlist: "PLbYn2hpzIrSiYOuBFbjbnw8ud4blIOzte",
+        playlistPage: "https://www.youtube.com/playlist?list=PLbYn2hpzIrSiYOuBFbjbnw8ud4blIOzte",
+        notes: "https://hamronotes.com/class-10/see/compulsory-mathematics/chapters"
+    },
+
+    english: {
+        title: "English Video Lessons",
+        playlist: "PLbYn2hpzIrSiTnNMLJCdzkvc28D4mcrJa",
+        playlistPage: "https://www.youtube.com/playlist?list=PLbYn2hpzIrSiTnNMLJCdzkvc28D4mcrJa",
+        notes: "https://hamronotes.com/class-10"
+    },
+
+    nepali: {
+        title: "Nepali Video Lessons",
+        playlist: "PLbYn2hpzIrSgCCnjhrZCuZ2tQZDXRcxvf",
+        playlistPage: "https://www.youtube.com/playlist?list=PLbYn2hpzIrSgCCnjhrZCuZ2tQZDXRcxvf",
+        notes: "https://hamronotes.com/class-10"
+    },
+
+    social: {
+        title: "Social Studies Video Lessons",
+        playlist: "PLbYn2hpzIrShJGmD4qK_6mw40bffEo-4u",
+        playlistPage: "https://www.youtube.com/playlist?list=PLbYn2hpzIrShJGmD4qK_6mw40bffEo-4u",
+        notes: "https://hamronotes.com/class-10/see/compulsory-social-studies/chapters"
+    },
+
+    optionalMath: {
+        title: "Optional Mathematics Video Lessons",
+        playlist: "",
+        playlistPage: "",
+        notes: "https://hamronotes.com/class-10/see/optional-mathematics/chapters"
+    }
+};
+
+const subjectSelect = document.getElementById("subjectSelect");
+const videoPlayer = document.getElementById("videoPlayer");
+const videoMessage = document.getElementById("videoMessage");
+const videoTitle = document.getElementById("videoTitle");
+const openPlaylist = document.getElementById("openPlaylist");
+const openNotes = document.getElementById("openNotes");
+
+function selectSubject(subject) {
+    subjectSelect.value = subject;
+    showVideo(subject);
+}
+
+function showVideo(subject) {
+    const selected = resources[subject];
+
+    if (!selected) {
+        return;
+    }
+
+    videoTitle.textContent = selected.title;
+    openNotes.href = selected.notes;
+
+    if (selected.playlist) {
+        videoPlayer.src =
+            "https://www.youtube-nocookie.com/embed/videoseries?list=" +
+            encodeURIComponent(selected.playlist);
+
+        videoPlayer.style.display = "block";
+        videoMessage.style.display = "none";
+
+        openPlaylist.href = selected.playlistPage;
+        openPlaylist.style.display = "inline-block";
+    } else {
+        videoPlayer.removeAttribute("src");
+        videoPlayer.style.display = "none";
+        videoMessage.style.display = "block";
+        openPlaylist.style.display = "none";
+    }
+}
+
+subjectSelect.addEventListener("change", function() {
+    showVideo(this.value);
+});
+
+// Search and subject filters
+
+const filterButtons = document.querySelectorAll(".filter-button");
+const subjectCards = document.querySelectorAll(".subject-card");
+const searchInput = document.getElementById("searchInput");
+const noResults = document.getElementById("noResults");
+
+let currentFilter = "all";
+
+function filterSubjects() {
+    const searchText = searchInput.value.toLowerCase();
+    let visibleCount = 0;
+
+    subjectCards.forEach(function(card) {
+        const category = card.dataset.category;
+        const name = card.dataset.name;
+
+        const matchesFilter =
+            currentFilter === "all" || category === currentFilter;
+
+        const matchesSearch = name.includes(searchText);
+
+        if (matchesFilter && matchesSearch) {
+            card.style.display = "block";
+            visibleCount++;
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    noResults.style.display =
+        visibleCount === 0 ? "block" : "none";
+}
+
+filterButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        filterButtons.forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+        this.classList.add("active");
+        currentFilter = this.dataset.filter;
+
+        filterSubjects();
+    });
+});
+
+searchInput.addEventListener("input", filterSubjects);
+
+// Load the default video
+showVideo("science");
+
+// Simple JavaScript PIN lock. Change this value to set a different PIN.
+const correctPIN = "1234";
+const pinForm = document.getElementById("pinForm");
+const pinInput = document.getElementById("pinInput");
+const lockScreen = document.getElementById("lockScreen");
+const errorMessage = document.getElementById("error");
+
+pinForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    if (pinInput.value === correctPIN) {
+        lockScreen.style.display = "none";
+        errorMessage.textContent = "";
+        pinInput.value = "";
+    } else {
+        errorMessage.textContent = currentLanguage === "ne"
+            ? "गलत PIN भयो। फेरि प्रयास गर्नुहोस्।"
+            : "Incorrect PIN. Please try again.";
+        pinInput.value = "";
+        pinInput.focus();
+    }
+});
+
+document.getElementById("togglePin").addEventListener("click", function() {
+    const isHidden = pinInput.type === "password";
+    pinInput.type = isHidden ? "text" : "password";
+    this.textContent = isHidden ? "Hide" : "Show";
+});
+
+document.getElementById("lockAgain").addEventListener("click", function() {
+    lockScreen.style.display = "flex";
+    pinInput.value = "";
+    errorMessage.textContent = "";
+    pinInput.focus();
+});
+
+// Add your real Zoom meeting URL between the quotation marks.
+const zoomMeetingLink = "";
+const zoomJoinLink = document.getElementById("zoomJoinLink");
+
+if (zoomMeetingLink.trim() !== "") {
+    zoomJoinLink.href = zoomMeetingLink;
+    zoomJoinLink.textContent = "Join Live Class";
+    zoomJoinLink.removeAttribute("aria-disabled");
+}
+
+// English and Nepali interface text.
+let currentLanguage = "en";
+const translations = {
+    en: {
+        nav: ["Home", "Subjects", "Videos", "Resources", "Online Class", "Contact Admin"],
+        heroTitle: "Learn Better. Prepare Smarter.",
+        heroText: "Welcome to EduSpark, a learning platform for Class 10 SEE students. Explore subject-wise notes, video lessons and useful study resources in one place.",
+        heroButton: "Explore Subjects",
+        subjectsTitle: "Class 10 Subjects",
+        subjectsText: "Select a subject to explore its study materials.",
+        search: "Search for a subject...",
+        filters: ["All", "Compulsory", "Optional"],
+        subjectNames: ["Science", "Mathematics", "English", "Nepali", "Social Studies", "Optional Mathematics"],
+        subjectDescriptions: [
+            "Explore physics, chemistry, biology and technology.",
+            "Practise algebra, geometry, statistics and other topics.",
+            "Improve grammar, reading, writing and communication.",
+            "Study Nepali literature, grammar and writing.",
+            "Learn about society, history, geography and civics.",
+            "Explore advanced algebra, geometry and trigonometry."
+        ],
+        studyButtons: ["Study Science", "Study Mathematics", "Study English", "Study Nepali", "Study Social Studies", "Study Optional Mathematics"],
+        noResults: "No matching subject found.",
+        videosTitle: "Video Lessons",
+        videosText: "Watch available Class 10 SEE video playlists.",
+        videoOptions: ["Science", "Mathematics", "English", "Nepali", "Social Studies", "Optional Mathematics"],
+        openPlaylist: "Open Original Playlist",
+        openNotes: "Open Subject Notes",
+        resourcesTitle: "Study Resources",
+        resourcesText: "Open chapter-wise notes and SEE study materials.",
+        resourceNames: ["Science Notes", "Mathematics Notes", "English Notes", "Nepali Notes", "Social Studies Notes", "Optional Mathematics Notes"],
+        resourceLinks: ["Open Chapter-wise Notes →", "Open Chapter-wise Notes →", "Open Class 10 Notes →", "Open Class 10 Notes →", "Open Chapter-wise Notes →", "Open Chapter-wise Notes →"],
+        onlineTitle: "Online Classes",
+        onlineText: "Join a live lesson when the admin shares a class meeting link.",
+        onlineRoom: "Live Class Room",
+        onlineDescription: "The Zoom meeting link will be added here by the admin.",
+        zoomButton: zoomMeetingLink ? "Join Live Class" : "Zoom link not added yet",
+        contactTitle: "Contact the Admin",
+        contactText: "Have questions about the SEE syllabus, notes or lessons? Contact us directly.",
+        whatsappTitle: "WhatsApp",
+        whatsappText: "Send your questions directly through WhatsApp.",
+        whatsappButton: "Message on WhatsApp",
+        emailTitle: "Email",
+        emailText: "Send syllabus questions and suggestions through email.",
+        emailButton: "Send an Email",
+        footerText: "Making learning simple and accessible.",
+        lockTitle: "Welcome to EduSpark",
+        lockDescription: "Enter your access PIN to continue",
+        pinLabel: "Access PIN",
+        pinPlaceholder: "Enter 4-digit PIN",
+        unlock: "Unlock Website",
+        lockFooter: "A place to learn, practise and grow.",
+        securityNote: "Note: This simple JavaScript PIN is not strong security.",
+        show: "Show",
+        hide: "Hide",
+        lockAgain: "Lock Website"
+    },
+    ne: {
+        nav: ["गृहपृष्ठ", "विषयहरू", "भिडियो", "अध्ययन सामग्री", "अनलाइन कक्षा", "प्रशासकलाई सम्पर्क"],
+        heroTitle: "राम्रोसँग सिकौँ, उत्कृष्ट तयारी गरौँ।",
+        heroText: "EduSpark कक्षा १० SEE विद्यार्थीका लागि सिकाइ प्लेटफर्म हो। यहाँ विषयअनुसारका नोट्स, भिडियो पाठ र उपयोगी अध्ययन सामग्री एकै ठाउँमा पाउनुहोस्।",
+        heroButton: "विषयहरू हेर्नुहोस्",
+        subjectsTitle: "कक्षा १० का विषयहरू",
+        subjectsText: "अध्ययन सामग्री हेर्न एउटा विषय छान्नुहोस्।",
+        search: "विषय खोज्नुहोस्...",
+        filters: ["सबै", "अनिवार्य", "ऐच्छिक"],
+        subjectNames: ["विज्ञान", "गणित", "अङ्ग्रेजी", "नेपाली", "सामाजिक अध्ययन", "ऐच्छिक गणित"],
+        subjectDescriptions: [
+            "भौतिकशास्त्र, रसायनशास्त्र, जीवविज्ञान र प्रविधि अध्ययन गर्नुहोस्।",
+            "बीजगणित, ज्यामिति, तथ्याङ्क र अन्य विषय अभ्यास गर्नुहोस्।",
+            "व्याकरण, पठन, लेखन र सञ्चार सीप सुधार गर्नुहोस्।",
+            "नेपाली साहित्य, व्याकरण र लेखन अध्ययन गर्नुहोस्।",
+            "समाज, इतिहास, भूगोल र नागरिक शिक्षा सिक्नुहोस्।",
+            "उन्नत बीजगणित, ज्यामिति र त्रिकोणमिति अध्ययन गर्नुहोस्।"
+        ],
+        studyButtons: ["विज्ञान पढ्नुहोस्", "गणित पढ्नुहोस्", "अङ्ग्रेजी पढ्नुहोस्", "नेपाली पढ्नुहोस्", "सामाजिक पढ्नुहोस्", "ऐच्छिक गणित पढ्नुहोस्"],
+        noResults: "मिल्दो विषय भेटिएन।",
+        videosTitle: "भिडियो पाठहरू",
+        videosText: "कक्षा १० SEE का उपलब्ध भिडियो प्लेलिस्ट हेर्नुहोस्।",
+        videoOptions: ["विज्ञान", "गणित", "अङ्ग्रेजी", "नेपाली", "सामाजिक अध्ययन", "ऐच्छिक गणित"],
+        openPlaylist: "मूल प्लेलिस्ट खोल्नुहोस्",
+        openNotes: "विषयका नोट्स खोल्नुहोस्",
+        resourcesTitle: "अध्ययन सामग्री",
+        resourcesText: "अध्यायअनुसारका नोट्स र SEE अध्ययन सामग्री खोल्नुहोस्।",
+        resourceNames: ["विज्ञानका नोट्स", "गणितका नोट्स", "अङ्ग्रेजीका नोट्स", "नेपालीका नोट्स", "सामाजिक अध्ययनका नोट्स", "ऐच्छिक गणितका नोट्स"],
+        resourceLinks: ["अध्यायअनुसारका नोट्स खोल्नुहोस् →", "अध्यायअनुसारका नोट्स खोल्नुहोस् →", "कक्षा १० का नोट्स खोल्नुहोस् →", "कक्षा १० का नोट्स खोल्नुहोस् →", "अध्यायअनुसारका नोट्स खोल्नुहोस् →", "अध्यायअनुसारका नोट्स खोल्नुहोस् →"],
+        onlineTitle: "अनलाइन कक्षा",
+        onlineText: "प्रशासकले कक्षाको बैठक लिङ्क उपलब्ध गराएपछि प्रत्यक्ष कक्षामा सहभागी हुनुहोस्।",
+        onlineRoom: "प्रत्यक्ष कक्षा कक्ष",
+        onlineDescription: "Zoom बैठकको लिङ्क प्रशासकले यहाँ राख्नुहुनेछ।",
+        zoomButton: zoomMeetingLink ? "प्रत्यक्ष कक्षामा सहभागी हुनुहोस्" : "Zoom लिङ्क राखिएको छैन",
+        contactTitle: "प्रशासकलाई सम्पर्क गर्नुहोस्",
+        contactText: "SEE पाठ्यक्रम, नोट्स वा पाठबारे प्रश्न छन्? हामीलाई सम्पर्क गर्नुहोस्।",
+        whatsappTitle: "व्हाट्सएप",
+        whatsappText: "आफ्ना प्रश्नहरू सिधै WhatsApp मार्फत पठाउनुहोस्।",
+        whatsappButton: "WhatsApp मा सन्देश पठाउनुहोस्",
+        emailTitle: "इमेल",
+        emailText: "पाठ्यक्रमसम्बन्धी प्रश्न र सुझाव इमेलमार्फत पठाउनुहोस्।",
+        emailButton: "इमेल पठाउनुहोस्",
+        footerText: "सिकाइलाई सरल र सबैका लागि सहज बनाउँदै।",
+        lockTitle: "EduSpark मा स्वागत छ",
+        lockDescription: "अगाडि बढ्न आफ्नो PIN राख्नुहोस्",
+        pinLabel: "प्रवेश PIN",
+        pinPlaceholder: "४ अङ्कको PIN राख्नुहोस्",
+        unlock: "वेबसाइट खोल्नुहोस्",
+        lockFooter: "सिक्ने, अभ्यास गर्ने र अघि बढ्ने स्थान।",
+        securityNote: "नोट: JavaScript मा राखिएको PIN बलियो सुरक्षा होइन।",
+        show: "देखाउनुहोस्",
+        hide: "लुकाउनुहोस्",
+        lockAgain: "वेबसाइट लक गर्नुहोस्"
+    }
+};
+
+function setLanguage(language) {
+    currentLanguage = language;
+    const t = translations[language];
+    document.documentElement.lang = language === "ne" ? "ne" : "en";
+
+    document.querySelectorAll("nav a").forEach((el, i) => el.textContent = t.nav[i]);
+    document.getElementById("heroTitle").textContent = t.heroTitle;
+    document.querySelector(".hero-content p").textContent = t.heroText;
+    document.querySelector(".hero-content .main-button").textContent = t.heroButton;
+    document.getElementById("subjectsTitle").textContent = t.subjectsTitle;
+    document.getElementById("subjectsDescription").textContent = t.subjectsText;
+    searchInput.placeholder = t.search;
+    filterButtons.forEach((el, i) => el.textContent = t.filters[i]);
+    subjectCards.forEach((card, i) => {
+        card.querySelector("h3").textContent = t.subjectNames[i];
+        card.querySelector("p").textContent = t.subjectDescriptions[i];
+        card.querySelector("a").textContent = t.studyButtons[i];
+    });
+    noResults.textContent = t.noResults;
+    document.getElementById("videosTitle").textContent = t.videosTitle;
+    document.querySelector("#videos .section-heading p").textContent = t.videosText;
+    const selectedVideoIndex = Object.keys(resources).indexOf(subjectSelect.value);
+    videoTitle.textContent = language === "ne"
+        ? (t.videoOptions[selectedVideoIndex] + " भिडियो पाठहरू")
+        : resources[subjectSelect.value].title;
+    Array.from(subjectSelect.options).forEach((el, i) => el.textContent = t.videoOptions[i]);
+    openPlaylist.textContent = t.openPlaylist;
+    openNotes.textContent = t.openNotes;
+    document.getElementById("resourcesTitle").textContent = t.resourcesTitle;
+    document.querySelector("#resources .section-heading p").textContent = t.resourcesText;
+    document.querySelectorAll(".resource-card h3").forEach((el, i) => {
+        const icons = ["🔬 ", "📐 ", "📖 ", "📝 ", "🌍 ", "📊 "];
+        el.textContent = icons[i] + t.resourceNames[i];
+    });
+    document.querySelectorAll(".resource-card a").forEach((el, i) => el.textContent = t.resourceLinks[i]);
+    document.querySelector("#online-classes .section-heading h2").textContent = t.onlineTitle;
+    document.querySelector("#online-classes .section-heading p").textContent = t.onlineText;
+    document.querySelector(".online-card h3").textContent = t.onlineRoom;
+    document.getElementById("onlineClassText").textContent = t.onlineDescription;
+    zoomJoinLink.textContent = t.zoomButton;
+    document.getElementById("contactTitle").textContent = t.contactTitle;
+    document.querySelector("#contact-admin .section-heading p").textContent = t.contactText;
+    const contactCards = document.querySelectorAll(".contact-card");
+    contactCards[0].querySelector("h3").textContent = t.whatsappTitle;
+    contactCards[0].querySelector("p").textContent = t.whatsappText;
+    contactCards[0].querySelector("a").textContent = t.whatsappButton;
+    contactCards[1].querySelector("h3").textContent = t.emailTitle;
+    contactCards[1].querySelector("p").textContent = t.emailText;
+    contactCards[1].querySelector("a").textContent = t.emailButton;
+    document.querySelector("footer p").textContent = t.footerText;
+    document.getElementById("lockTitle").textContent = t.lockTitle;
+    document.getElementById("lockDescription").textContent = t.lockDescription;
+    document.getElementById("pinLabel").textContent = t.pinLabel;
+    pinInput.placeholder = t.pinPlaceholder;
+    document.getElementById("unlockButton").firstChild.textContent = t.unlock + " ";
+    document.getElementById("lockFooter").textContent = t.lockFooter;
+    document.getElementById("securityNote").textContent = t.securityNote;
+    document.getElementById("togglePin").textContent = pinInput.type === "password" ? t.show : t.hide;
+    document.getElementById("lockAgain").textContent = t.lockAgain;
+    document.getElementById("languageToggle").textContent = language === "en" ? "नेपाली" : "English";
+}
+
+document.getElementById("languageToggle").addEventListener("click", function() {
+    setLanguage(currentLanguage === "en" ? "ne" : "en");
+});
+
+setLanguage("en");
+
+</script>
+</body>
+</html>
